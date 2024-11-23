@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все клиенты</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Список всех клиентов</h1>
+    <a href="{{ url_for('index') }}">Вернуться на главную</a>
+    <ul>
+        {% for client in clients %}
+        <li>{{ client.name }} - {{ client.phone }} (С: {{ client.check_in_date }} - По: {{ client.check_out_date }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
